@@ -8,5 +8,9 @@ namespace TravelListTeamStupid.Model
 {
     public class Journey
     {
+        private List<Category> categories;
+
+        String Name { get; set; }
+        double PercentageDone { get; set; }
     }
 }

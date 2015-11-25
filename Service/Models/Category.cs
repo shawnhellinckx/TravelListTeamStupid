@@ -8,5 +8,8 @@ namespace TravelListTeamStupid.Model
 {
     public class Category
     {
+        private List<Item> items;
+        String Name { get; set; }
+        double PercentCompleted { get; set; }
     }
 }

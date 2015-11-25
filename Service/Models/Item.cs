@@ -8,5 +8,8 @@ namespace TravelListTeamStupid.Model
 {
     public class Item
     {
+        String Name { get; set; }
+        int Count { get; set; }
+        bool Done { get; set; }
     }
 }
