@@ -13,7 +13,7 @@ namespace Rest4API.Controllers
     {
         private IJourneyRepository repo = new JourneyRepository();
 
-        // GET: api/Travels
+        // GET: api/Journey
         public HttpResponseMessage Get()
         {
             IEnumerable<Journey> journeys = this.repo.GetAllJourneys();
@@ -24,23 +24,23 @@ namespace Rest4API.Controllers
             return Request.CreateResponse(HttpStatusCode.NotFound);
         }
 
-        // GET: api/Travels/5
+        // GET: api/Journey/5
         public string Get(int id)
         {
-            return "value";
+            return "Travel" + id;
         }
 
-        // POST: api/Travels
+        // POST: api/Journey
         public void Post([FromBody]string value)
         {
         }
 
-        // PUT: api/Travels/5
+        // PUT: api/Journey/5
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE: api/Travels/5
+        // DELETE: api/Journey/5
         public void Delete(int id)
         {
             repo.DeleteJourney(id);
