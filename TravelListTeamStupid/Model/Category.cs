@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TravelListTeamStupid.Model
 {
-    class Reis
+    class Category
     {
     }
 }

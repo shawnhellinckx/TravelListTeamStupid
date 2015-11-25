@@ -97,23 +97,23 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Categorie.cs" />
+    <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Item.cs" />
-    <Compile Include="Model\Reis.cs" />
+    <Compile Include="Model\Travel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Views\CategorieView.xaml.cs">
-      <DependentUpon>CategorieView.xaml</DependentUpon>
+    <Compile Include="Views\CategoriesView.xaml.cs">
+      <DependentUpon>CategoriesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ItemsView.xaml.cs">
       <DependentUpon>ItemsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ReizenView.xaml.cs">
-      <DependentUpon>ReizenView.xaml</DependentUpon>
+    <Compile Include="Views\TravelsView.xaml.cs">
+      <DependentUpon>TravelsView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -125,7 +125,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\CategorieView.xaml">
+    <Page Include="Views\CategoriesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -133,7 +133,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ReizenView.xaml">
+    <Page Include="Views\TravelsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
