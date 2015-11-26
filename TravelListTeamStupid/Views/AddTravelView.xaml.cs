@@ -8,11 +8,11 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 
-namespace TravelListTeamStupid.Views
+namespace TravelListTeamStupid.ViewModels
 {
-    public partial class TravelsView : UserControl
+    public partial class AddTravelView : PhoneApplicationPage
     {
-        public TravelsView()
+        public AddTravelView()
         {
             InitializeComponent();
         }
