@@ -25,9 +25,9 @@ namespace Rest4API.Controllers
         }
 
         // GET: api/Journey/5
-        public string Get(int id)
+        public Journey Get(int id)
         {
-            return "Travel" + id;
+            return this.repo.GetJourney(id);
         }
 
         // POST: api/Journey
