@@ -9,11 +9,15 @@ namespace TravelListTeamStupid.Model
 {
     public class Journey
     {
-        private List<Category> categories;
+        private IList<Category> categories;
 
         [Key]
         public int JourneyId { get; set; }
         public String Name { get; set; }
         public double PercentageDone { get; set; }
+
+        public void createEmptyCategoryList() {
+            categories = new List<Category>();
+        }
     }
 }

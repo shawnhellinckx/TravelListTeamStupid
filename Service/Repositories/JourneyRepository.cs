@@ -21,14 +21,20 @@ namespace Service.Repositories
             }
         }
 
-        public Journey CreateJourney(Journey journey)
+        public void CreateJourney(Journey journey)
         {
-            throw new NotImplementedException();
+            journey.createEmptyCategoryList();
+            journeyList.Add(journey);
         }
 
         public bool DeleteJourney(int id)
         {
-            throw new NotImplementedException();
+            Journey journey = journeyList.Find(j => j.JourneyId == id);
+            if (journey != null) {
+                journeyList.Remove(journey);
+                return true;
+            }
+            return false;
         }
 
         public IEnumerable<Journey> GetAllJourneys()
@@ -41,9 +47,10 @@ namespace Service.Repositories
             return journeyList.Find(j => j.JourneyId == id);
         }
 
-        public Journey UpdateJourney(int id, Journey journey)
+        public void UpdateJourney(int id, Journey journey)
         {
-            throw new NotImplementedException();
+            Journey to_update = journeyList.Find(j => j.JourneyId == id);
+            to_update = journey;
         }
     }
 }

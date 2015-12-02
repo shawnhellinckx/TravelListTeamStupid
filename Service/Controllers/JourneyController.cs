@@ -31,8 +31,9 @@ namespace Rest4API.Controllers
         }
 
         // POST: api/Journey
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Journey value)
         {
+            this.repo.CreateJourney(value);
         }
 
         // PUT: api/Journey/5
