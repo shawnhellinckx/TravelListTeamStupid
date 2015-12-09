@@ -26,10 +26,10 @@ namespace Rest4API.Controllers
         }
 
         // GET: api/Journey/5
-        //public Journey Get(int id)
-        //{
-        //    return this.repo.GetJourney(id);
-        //}
+        public Journey Get(int id)
+        {
+            return this.repo.GetJourney(id);
+        }
 
         // POST: api/Journey
         public void Post([FromBody]Journey value)
@@ -43,9 +43,9 @@ namespace Rest4API.Controllers
         }
 
         // DELETE: api/Journey/5
-        //public void Delete(int id)
-        //{
-        //    repo.DeleteJourney(id);
-        //}
+        public void Delete(int id)
+        {
+            repo.DeleteJourney(id);
+        }
     }
 }

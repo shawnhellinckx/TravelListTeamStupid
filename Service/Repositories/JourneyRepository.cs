@@ -30,6 +30,7 @@ namespace Service.Repositories
             if (journey != null)
             {
                 journeys.Remove(journey);
+                context.SaveChanges();
                 return true;
             }
             return false;
@@ -49,6 +50,7 @@ namespace Service.Repositories
         {
             Journey to_update = journeys.FirstOrDefault(j => j.JourneyId == id);
             to_update = journey;
+            context.SaveChanges();
         }
     }
 }
