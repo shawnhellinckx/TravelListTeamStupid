@@ -9,10 +9,20 @@ namespace TravelListTeamStupid.Model
 {
     public class Travel
     {
-        public string Place { get; set; }
-        public decimal Percentage { get; set; }
-        public DateTime Date { get; set; }
+        private List<Category> categories;
 
+        public string Name { get; set; }
+        public decimal PercentageDone { get; set; }
+        public DateTime Date { get; set; }
+        public List<Category> getCategories()
+        {
+            return categories;
+        }
+
+        public void addCategory(Category category)
+        {
+            categories.Add(category);
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

@@ -23,13 +23,52 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="txtCategorie" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
-        </Grid>
+        <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <ListBox x:Name="listItems">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="2" BorderBrush="White">
+                            <Grid Width="432" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                
+                                <TextBlock Grid.Column="0" Text="{Binding Name}"  VerticalAlignment="Center"/>
+                                <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right">
+                                    <Button Padding="0" BorderThickness="0" CommandParameter="{Binding Id}"  VerticalAlignment="Top" Click="btnMin">
+                                        <Button.Content>
+                                            <Image Source="../Assets/appbar.app.minus.png" Height="80" Width="80" UseLayoutRounding="True"  Stretch="Fill"/>
+                                        </Button.Content>
+                                    </Button>
+                                    <TextBlock  Text="{Binding Count}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                    <Button Padding="0" BorderThickness="0" CommandParameter="{Binding Id}"  VerticalAlignment="Top" Click="btnAdd">
+                                        <Button.Content>
+                                            <Image Source="../Assets/appbar.app.plus.png" Height="80" Width="80" UseLayoutRounding="True"  Stretch="Fill"/>
+                                        </Button.Content>
+                                    </Button>
+                                </StackPanel>
+                                <CheckBox CommandParameter="{Binding Id}" IsChecked="{Binding Done}"  Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" x:Name="chIsCompleted" Content="Heb je dit item al mee?" HorizontalAlignment="Center" Click="chIsCompleted_Click"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
     </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar>
+            <shell:ApplicationBarIconButton IconUri="/Assets/appbar.add.png" Text="Add" Click="ApplicationBarIconButton_Click"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>

@@ -11,7 +11,6 @@ namespace TravelListTeamStupid.Model
     {
         private List<Item> items;
 
-        [Key]
         public int CategoryID { get; set; }
         public String Name { get; set; }
         public double PercentCompleted { get; set; }

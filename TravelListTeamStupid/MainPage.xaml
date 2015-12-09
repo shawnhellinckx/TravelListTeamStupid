@@ -49,6 +49,7 @@
         <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <HyperlinkButton Content="Go Travels view" NavigateUri="/Views/TravelsView.xaml"/>
             <HyperlinkButton Content="Go to Addscreen" NavigateUri="/Views/AddTravelView.xaml"/>
+            <HyperlinkButton Content="Go to GetCategory" NavigateUri="/Views/CategoriesView.xaml"/>
             <!--<views:TravelsView x:Name="TravelsViewOnPage"/>-->
             
            
