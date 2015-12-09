@@ -1,4 +1,5 @@
-﻿using Service.Repositories;
+﻿using Service.Models;
+using Service.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Rest4API.Controllers
 {
     public class JourneyController : ApiController
     {
-        private IJourneyRepository repo = new JourneyRepository();
+        private IJourneyRepository repo = new JourneyRepository(ApplicationDbContext.Create());
 
         // GET: api/Journey
         public HttpResponseMessage Get()
@@ -25,10 +26,10 @@ namespace Rest4API.Controllers
         }
 
         // GET: api/Journey/5
-        public Journey Get(int id)
-        {
-            return this.repo.GetJourney(id);
-        }
+        //public Journey Get(int id)
+        //{
+        //    return this.repo.GetJourney(id);
+        //}
 
         // POST: api/Journey
         public void Post([FromBody]Journey value)
@@ -42,9 +43,9 @@ namespace Rest4API.Controllers
         }
 
         // DELETE: api/Journey/5
-        public void Delete(int id)
-        {
-            repo.DeleteJourney(id);
-        }
+        //public void Delete(int id)
+        //{
+        //    repo.DeleteJourney(id);
+        //}
     }
 }
