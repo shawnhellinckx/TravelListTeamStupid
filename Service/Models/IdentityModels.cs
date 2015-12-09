@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using System.Data.Entity;
 using TravelListTeamStupid.Model;
+using System.Collections.Generic;
 
 namespace Service.Models
 {
@@ -34,6 +35,28 @@ namespace Service.Models
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+    }
+
+    public class ApplicationDbInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
+    {
+        protected override void Seed(ApplicationDbContext context)
+        {
+            IList<Journey> journeyList = new List<Journey>();
+
+            for (int i = 0; i < 10; i++)
+            {
+                Journey journey = new Journey();
+                journey.JourneyId = i;
+                journey.Name = "Journey " + i;
+                journey.PercentageDone = 0;
+                journeyList.Add(journey);
+            }
+
+            foreach (Journey journey in journeyList)
+                context.Journeys.Add(journey);
+
+            base.Seed(context);
         }
     }
 }
