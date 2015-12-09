@@ -13,7 +13,19 @@ namespace TravelListTeamStupid.ViewModels
     public class TravelsViewModel
     {
         public ObservableCollection<Travel> TravelsList { get; set; }
-        public void GetTravelList()
+
+        public TravelsViewModel()
+        {
+            this.TravelsCollection = GetTravelList();
+
+        }
+        public ObservableCollection<Travel> TravelsCollection
+        {
+            get;
+            private set;
+        }
+
+        public ObservableCollection<Travel> GetTravelList()
         {
             ObservableCollection<Travel> list = new ObservableCollection<Travel>();
 
@@ -44,7 +56,7 @@ namespace TravelListTeamStupid.ViewModels
             list.Add(new Travel() { Place = "De Kempen", Date = new DateTime(2015, 12, 23), Percentage = 0.16M });
             list.Add(new Travel() { Place = "Amerika", Date = new DateTime(2015, 12, 29), Percentage = 0.69M });
 
-            TravelsList = list;
+            return list;
         }
 
 

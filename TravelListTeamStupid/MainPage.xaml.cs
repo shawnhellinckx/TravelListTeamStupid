@@ -14,48 +14,48 @@ namespace TravelListTeamStupid
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        private TravelsViewModel vm;
-        // Constructor
+        //private TravelsViewModel vm;
+        //// Constructor
         public MainPage()
         {
             InitializeComponent();
-            vm = new TravelsViewModel();
+            //vm = new TravelsViewModel();
 
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
         }
-        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
-        {
-            base.OnNavigatedTo(e);
+        //protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        //{
+        //    base.OnNavigatedTo(e);
 
-            if (!StateUtilities.IsLaunching && this.State.ContainsKey("Travels"))
-            {
-                vm = (TravelsViewModel)this.State["Travels"];
-            }
-            else
-            {
-                vm.GetTravelList();
-            }
-            TravelsViewOnPage.DataContext = vm.TravelsList;
+        //    if (!StateUtilities.IsLaunching && this.State.ContainsKey("Travels"))
+        //    {
+        //        vm = (TravelsViewModel)this.State["Travels"];
+        //    }
+        //    else
+        //    {
+        //        vm.GetTravelList();
+        //    }
+        //    TravelsViewOnPage.DataContext = vm.TravelsList;
 
-        }
+        //}
 
-        protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
-        {
-            base.OnNavigatedFrom(e);
+        //protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
+        //{
+        //    base.OnNavigatedFrom(e);
 
-            if (this.State.ContainsKey("Travels"))
-            {
-                this.State["Travels"] = vm;
-            }
-            else
-            {
-                this.State.Add("Travels", vm);
-            }
+        //    if (this.State.ContainsKey("Travels"))
+        //    {
+        //        this.State["Travels"] = vm;
+        //    }
+        //    else
+        //    {
+        //        this.State.Add("Travels", vm);
+        //    }
 
-            StateUtilities.IsLaunching = false;
-        }
+        //    StateUtilities.IsLaunching = false;
+        //}
 
 
         //private void AppBarSave_Click(object sender, EventArgs e)
