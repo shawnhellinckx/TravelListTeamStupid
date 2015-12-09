@@ -10,8 +10,8 @@ namespace Service.Repositories
     {
         void CreateJourney(Journey journey);
         IEnumerable<Journey> GetAllJourneys();
-        //Journey GetJourney(int id);
-        //void UpdateJourney(int id, Journey journey);
-        //Boolean DeleteJourney(int id);
+        Journey GetJourney(int id);
+        void UpdateJourney(int id, Journey journey);
+        Boolean DeleteJourney(int id);
     }
 }
