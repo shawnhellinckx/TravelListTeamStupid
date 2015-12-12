@@ -28,35 +28,13 @@ namespace Service.Models
         public DbSet<Item> Items { get; set; }
 
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("TraveLLisT", throwIfV1Schema: false)
         {
         }
         
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
-        }
-    }
-
-    public class ApplicationDbInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
-    {
-        protected override void Seed(ApplicationDbContext context)
-        {
-            IList<Journey> journeyList = new List<Journey>();
-
-            for (int i = 0; i < 10; i++)
-            {
-                Journey journey = new Journey();
-                journey.JourneyId = i;
-                journey.Name = "Journey " + i;
-                journey.PercentageDone = 0;
-                journeyList.Add(journey);
-            }
-
-            foreach (Journey journey in journeyList)
-                context.Journeys.Add(journey);
-
-            base.Seed(context);
         }
     }
 }

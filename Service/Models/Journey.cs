@@ -14,10 +14,14 @@ namespace TravelListTeamStupid.Model
         [Key]
         public int JourneyId { get; set; }
         public String Name { get; set; }
-        public double PercentageDone { get; set; }
+        public DateTime Date { get; set; }
 
-        public void createEmptyCategoryList() {
+        public void CreateEmptyCategoryList() {
             categories = new List<Category>();
+        }
+
+        public IList<Category> getCategories() {
+            return categories;
         }
     }
 }
