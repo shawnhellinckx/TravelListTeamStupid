@@ -187,14 +187,13 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\JourneyController.cs" />
+    <Compile Include="Controllers\QueryableExpandAttribute.cs" />
     <Compile Include="Controllers\TodoItemController.cs" />
     <Compile Include="DataObjects\Category.cs" />
     <Compile Include="DataObjects\Item.cs" />
     <Compile Include="DataObjects\Journey.cs" />
     <Compile Include="DataObjects\TodoItem.cs" />
     <Compile Include="Models\TraveLLisTContext.cs" />
-    <Compile Include="Repositories\IJourneyRepository.cs" />
-    <Compile Include="Repositories\JourneyRepository.cs" />
     <Compile Include="ScheduledJobs\SampleJob.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

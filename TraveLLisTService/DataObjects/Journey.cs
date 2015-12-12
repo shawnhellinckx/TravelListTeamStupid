@@ -1,21 +1,18 @@
 ﻿using Microsoft.WindowsAzure.Mobile.Service;
 using System;
+using System.Collections.Generic;
 
 namespace TraveLLisTService.DataObjects
 {
     public class Journey : EntityData
     {
-        //private IList<Category> categories;
+        public Journey() {
+            Categories = new List<TodoItem>();
+        }
 
         public string Name { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime? Date { get; set; }
 
-        //public void CreateEmptyCategoryList() {
-        //    categories = new List<Category>();
-        //}
-
-        //public IList<Category> getCategories() {
-        //    return categories;
-        //}
+        public virtual ICollection<TodoItem> Categories { get; set; }
     }
 }
