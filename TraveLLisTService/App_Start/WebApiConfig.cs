@@ -30,7 +30,8 @@ namespace TraveLLisTService
         }
     }
 
-    public class TraveLLisTInitializer : ClearDatabaseSchemaIfModelChanges<TraveLLisTContext>
+    //ClearDatabaseSchemaIfModelChanges
+    public class TraveLLisTInitializer : DropCreateDatabaseAlways<TraveLLisTContext>
     {
         protected override void Seed(TraveLLisTContext context)
         {
@@ -45,10 +46,12 @@ namespace TraveLLisTService
                 context.Set<TodoItem>().Add(todoItem);
             }
 
-            List<Journey> journeys = new List<Journey>();
-            for (int i = 1; i <= 10; i++) {
-                Journey journey = new Journey { Name = "Journey " + i, Date = new DateTime() };
-                journeys.Add(journey);
+            List<Journey> journeys = new List<Journey>() {
+                new Journey { Id = Guid.NewGuid().ToString(), Name="Lisabon", Categories=todoItems},
+            };
+
+            foreach (Journey journey in journeys)
+            {
                 context.Set<Journey>().Add(journey);
             }
 
