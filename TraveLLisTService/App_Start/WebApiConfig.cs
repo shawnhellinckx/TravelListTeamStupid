@@ -47,7 +47,7 @@ namespace TraveLLisTService
             }
 
             List<Journey> journeys = new List<Journey>() {
-                new Journey { Id = Guid.NewGuid().ToString(), Name="Lisabon", Categories=todoItems},
+                new Journey { Id = Guid.NewGuid().ToString(), Name="Lisabon", Date= new DateTime(2015,02,03), Categories=todoItems},
             };
 
             foreach (Journey journey in journeys)

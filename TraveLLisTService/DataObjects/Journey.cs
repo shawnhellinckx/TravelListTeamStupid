@@ -11,6 +11,7 @@ namespace TraveLLisTService.DataObjects
         }
 
         public string Name { get; set; }
+
         public DateTime? Date { get; set; }
 
         public virtual ICollection<TodoItem> Categories { get; set; }
