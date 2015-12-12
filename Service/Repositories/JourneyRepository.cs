@@ -20,6 +20,7 @@ namespace Service.Repositories
 
         public void CreateJourney(Journey journey)
         {
+            journey.CreateEmptyCategoryList();
             journeys.Add(journey);
             context.SaveChanges();
         }
@@ -30,6 +31,7 @@ namespace Service.Repositories
             if (journey != null)
             {
                 journeys.Remove(journey);
+                context.SaveChanges();
                 return true;
             }
             return false;
@@ -45,10 +47,16 @@ namespace Service.Repositories
             return journeys.FirstOrDefault(j => j.JourneyId == id);
         }
 
+        public IEnumerable<Category> GetAllCategoriesOfJourney(int id) {
+            Journey journey = journeys.FirstOrDefault(j => j.JourneyId == id);
+            return journey.getCategories();
+        }
+
         public void UpdateJourney(int id, Journey journey)
         {
             Journey to_update = journeys.FirstOrDefault(j => j.JourneyId == id);
             to_update = journey;
+            context.SaveChanges();
         }
     }
 }
