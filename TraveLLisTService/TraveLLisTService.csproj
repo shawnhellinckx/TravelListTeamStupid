@@ -216,6 +216,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\mobile-TraveLLisT-Groep11.pubxml" />
     <None Include="Properties\PublishProfiles\mobile-TraveLLisT.pubxml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
