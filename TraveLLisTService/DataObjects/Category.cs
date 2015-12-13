@@ -10,10 +10,11 @@ namespace TraveLLisTService.DataObjects
 {
     public class Category : EntityData
     {
-        //private List<Item> items;
+        public Category() {
+            Items = new List<Item>();
+        }
 
-        //public int CategoryID { get; set; }
         public string Name { get; set; }
-        //public double PercentCompleted { get; set; }
+        public virtual ICollection<Item> Items { get; set; }
     }
 }

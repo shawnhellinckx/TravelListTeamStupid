@@ -10,8 +10,9 @@ namespace TraveLLisTService.DataObjects
 {
     public class Item : EntityData
     {
-        string Name { get; set; }
-        int Count { get; set; }
-        bool Done { get; set; }
+        public string Name { get; set; }
+        public int Count { get; set; }
+        public int Total { get; set; }
+        public bool Done { get; set; }
     }
 }
