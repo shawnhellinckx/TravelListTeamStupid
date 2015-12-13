@@ -31,7 +31,8 @@ namespace TraveLLisTService
     }
 
     //ClearDatabaseSchemaIfModelChanges
-    public class TraveLLisTInitializer : DropCreateDatabaseAlways<TraveLLisTContext>
+    //DropCreateDatabaseAlways
+    public class TraveLLisTInitializer : ClearDatabaseSchemaIfModelChanges<TraveLLisTContext>
     {
         protected override void Seed(TraveLLisTContext context)
         {
@@ -46,8 +47,42 @@ namespace TraveLLisTService
                 context.Set<TodoItem>().Add(todoItem);
             }
 
+            List<Item> ItemLijst1 = new List<Item>()
+            {
+                new Item { Id= Guid.NewGuid().ToString(), Name="Onderbroeken", Count=1, Total=5, Done= false },
+                new Item { Id= Guid.NewGuid().ToString(), Name="T-shirt", Count=1, Total=5, Done= false },
+                new Item { Id= Guid.NewGuid().ToString(), Name="Broek", Count=2, Total=2, Done= true }
+            };
+
+            foreach (Item item in ItemLijst1)
+            {
+                context.Set<Item>().Add(item);
+            }
+
+            List<Item> ItemLijst2 = new List<Item>()
+            {
+                new Item { Id= Guid.NewGuid().ToString(), Name="Tandpasta", Count=0, Total=1, Done= false },
+                new Item { Id= Guid.NewGuid().ToString(), Name="Tandenborstel", Count=1, Total=1, Done= true }
+            };
+
+            foreach (Item item in ItemLijst2)
+            {
+                context.Set<Item>().Add(item);
+            }
+
+            List<Category> categories = new List<Category>()
+            {
+                new Category {Id= Guid.NewGuid().ToString(), Name="Kleren", Items=ItemLijst1 },
+                new Category {Id= Guid.NewGuid().ToString(), Name="Badkamer", Items=ItemLijst2 }
+            };
+
+            foreach (Category category in categories)
+            {
+                context.Set<Category>().Add(category);
+            }
+
             List<Journey> journeys = new List<Journey>() {
-                new Journey { Id = Guid.NewGuid().ToString(), Name="Lisabon", Date= new DateTime(2015,02,03), Categories=todoItems},
+                new Journey { Id = Guid.NewGuid().ToString(), Name="Lisabon", Date= new DateTime(2015,02,03), Categories=categories},
             };
 
             foreach (Journey journey in journeys)

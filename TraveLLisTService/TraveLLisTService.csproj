@@ -186,6 +186,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\JourneyController.cs" />
     <Compile Include="Controllers\QueryableExpandAttribute.cs" />
     <Compile Include="Controllers\TodoItemController.cs" />
