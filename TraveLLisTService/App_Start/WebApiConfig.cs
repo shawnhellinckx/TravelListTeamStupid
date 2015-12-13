@@ -32,7 +32,7 @@ namespace TraveLLisTService
 
     //ClearDatabaseSchemaIfModelChanges
     //DropCreateDatabaseAlways
-    public class TraveLLisTInitializer : ClearDatabaseSchemaIfModelChanges<TraveLLisTContext>
+    public class TraveLLisTInitializer : DropCreateDatabaseAlways<TraveLLisTContext>
     {
         protected override void Seed(TraveLLisTContext context)
         {
