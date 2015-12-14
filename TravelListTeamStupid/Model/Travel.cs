@@ -9,6 +9,16 @@ namespace TravelListTeamStupid.Model
 {
     public class Travel
     {
+        public Travel()
+        {
+
+        }
+        public Travel(string name, DateTime date)
+        {
+            this.Name = name;
+            this.Date = date;
+            
+        }
         private List<Category> categories;
 
         public string Name { get; set; }

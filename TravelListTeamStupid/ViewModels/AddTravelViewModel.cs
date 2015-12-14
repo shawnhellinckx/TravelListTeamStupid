@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace TravelListTeamStupid.ViewModels
 {
-    class AddTravelViewModel
+    public class AddTravelViewModel
     {
+
     }
 }

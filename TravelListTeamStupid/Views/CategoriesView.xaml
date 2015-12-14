@@ -31,8 +31,8 @@
         </StackPanel>
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="2" Margin="12,0,12,0">
-            <ListBox HorizontalContentAlignment="Center"  x:Name="listCategory" SelectionChanged="listCategory_SelectionChanged">
-                <ListBox.ItemTemplate>
+            <phone:LongListSelector HorizontalContentAlignment="Center"  x:Name="listCategory" SelectionChanged="listCategory_SelectionChanged">
+                <phone:LongListSelector.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
                             <Border x:Name="borderText" Width="432" BorderThickness="1" BorderBrush="White" HorizontalAlignment="Stretch">
@@ -51,8 +51,8 @@
                             </Border>
                         </StackPanel>
                     </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+                </phone:LongListSelector.ItemTemplate>
+            </phone:LongListSelector>
         </Grid>
     </Grid>
 

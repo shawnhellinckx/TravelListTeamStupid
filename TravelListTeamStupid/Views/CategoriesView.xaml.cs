@@ -29,17 +29,16 @@ namespace TravelListTeamStupid.Views
 
         private void listCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ListBox box = (ListBox)sender;
+            LongListSelector box = (LongListSelector)sender;
             Category category = (Category)box.SelectedItem;
             if (category != null)
                 NavigationService.Navigate(new Uri("/Views/ItemsView.xaml?category=" + category.Id, UriKind.Relative));
-
+            listCategory.SelectedItem = null;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            listCategory.SelectedIndex = -1;
         }
 
 
