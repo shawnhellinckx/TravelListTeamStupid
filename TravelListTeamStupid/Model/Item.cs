@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -15,8 +16,15 @@ namespace TravelListTeamStupid.Model
         private bool _Done;
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         public int Id { get; set; }
+        [JsonProperty(PropertyName = "name")]
         public String Name { get; set; }
+
+        [JsonProperty(PropertyName = "categoryId")]
+        public string CategoryId { get; set; }
+
+        [JsonProperty(PropertyName = "count")]
         public int Count
         {
             get
@@ -30,6 +38,7 @@ namespace TravelListTeamStupid.Model
             }
         }
 
+        [JsonProperty(PropertyName = "done")]
         public bool Done
         {
             get { return _Done; }
