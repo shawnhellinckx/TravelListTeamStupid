@@ -41,15 +41,22 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="Travel App" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+            <TextBlock Text="Travels" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Button Content="Button"></Button>
-        </Grid>
+        <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <HyperlinkButton Content="Go Travels view" NavigateUri="/Views/TravelsView.xaml"/>
+            <HyperlinkButton Content="Go to Addscreen" NavigateUri="/Views/AddTravelView.xaml"/>
+            <HyperlinkButton Content="Go to GetCategory" NavigateUri="/Views/CategoriesView.xaml"/>
+            <!--<views:TravelsView x:Name="TravelsViewOnPage"/>-->
+            
+           
+        </StackPanel>
+
         
+
         <!--Uncomment to see an alignment grid to help ensure your controls are
             aligned on common boundaries.  The image has a top margin of -32px to
             account for the System Tray. Set this to 0 (or remove the margin altogether)

@@ -8,19 +8,64 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using TravelListTeamStupid.Resources;
+using TravelListTeamStupid.ViewModels;
 
 namespace TravelListTeamStupid
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        // Constructor
+        //private TravelsViewModel vm;
+        //// Constructor
         public MainPage()
         {
             InitializeComponent();
+            //vm = new TravelsViewModel();
+
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
         }
+        //protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        //{
+        //    base.OnNavigatedTo(e);
+
+        //    if (!StateUtilities.IsLaunching && this.State.ContainsKey("Travels"))
+        //    {
+        //        vm = (TravelsViewModel)this.State["Travels"];
+        //    }
+        //    else
+        //    {
+        //        vm.GetTravelList();
+        //    }
+        //    TravelsViewOnPage.DataContext = vm.TravelsList;
+
+        //}
+
+        //protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
+        //{
+        //    base.OnNavigatedFrom(e);
+
+        //    if (this.State.ContainsKey("Travels"))
+        //    {
+        //        this.State["Travels"] = vm;
+        //    }
+        //    else
+        //    {
+        //        this.State.Add("Travels", vm);
+        //    }
+
+        //    StateUtilities.IsLaunching = false;
+        //}
+
+
+        //private void AppBarSave_Click(object sender, EventArgs e)
+        //{
+        //    vm.SaveAccomplishments();
+        //}
+
+
+
+
 
         // Sample code for building a localized ApplicationBar
         //private void BuildLocalizedApplicationBar()
