@@ -22,9 +22,9 @@ namespace TravelListTeamStupid.Views
         {
             InitializeComponent();
             list = longListTravel;
-            TravelsViewModel.AddAll();
+            //travelsViewModel.Get();
 
-            list.ItemsSource = TravelsViewModel.GetTravelList();
+            list.ItemsSource = travelsViewModel.GetTravels();
         }
 
         private void appButton_Click(object sender, EventArgs e)

@@ -29,10 +29,12 @@ namespace TravelListTeamStupid.ViewModels
             Console.WriteLine(travel.Name);
 
             travelsViewModel.AddTravel(travel);
-            foreach(Travel t in TravelsViewModel.GetTravelList())
-            {
-                Console.WriteLine();
-            }
+
+            //foreach(Travel t in TravelsViewModel.GetTravelList())
+            //{
+            //    Console.WriteLine();
+            //}
+
             NavigationService.GoBack();
         }
     }
