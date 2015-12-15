@@ -26,7 +26,7 @@ namespace TraveLLisTService.Controllers
         }
 
         // GET tables/Category/48D68C86-6EA6-4C25-AA33-223FC9A27959
-        [QueryableExpand("Categories")]
+        [QueryableExpand("Items")]
         public SingleResult<Category> GetCategory(string id)
         {
             return Lookup(id);
