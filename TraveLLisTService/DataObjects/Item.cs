@@ -12,7 +12,8 @@ namespace TraveLLisTService.DataObjects
     {
         public string Name { get; set; }
         public int Count { get; set; }
-        public int Total { get; set; }
         public bool Done { get; set; }
+        public string CategoryId { get; set; }
+        public virtual Category category { get; set; }
     }
 }

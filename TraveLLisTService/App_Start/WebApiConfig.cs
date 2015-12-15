@@ -49,9 +49,9 @@ namespace TraveLLisTService
 
             List<Item> ItemLijst1 = new List<Item>()
             {
-                new Item { Id= Guid.NewGuid().ToString(), Name="Onderbroeken", Count=1, Total=5, Done= false },
-                new Item { Id= Guid.NewGuid().ToString(), Name="T-shirt", Count=1, Total=5, Done= false },
-                new Item { Id= Guid.NewGuid().ToString(), Name="Broek", Count=2, Total=2, Done= true }
+                new Item { Id= Guid.NewGuid().ToString(), Name="Onderbroeken", Count=1, Done= false },
+                new Item { Id= Guid.NewGuid().ToString(), Name="T-shirt", Count=1, Done= false },
+                new Item { Id= Guid.NewGuid().ToString(), Name="Broek", Count=2, Done= true }
             };
 
             foreach (Item item in ItemLijst1)
@@ -61,8 +61,8 @@ namespace TraveLLisTService
 
             List<Item> ItemLijst2 = new List<Item>()
             {
-                new Item { Id= Guid.NewGuid().ToString(), Name="Tandpasta", Count=0, Total=1, Done= false },
-                new Item { Id= Guid.NewGuid().ToString(), Name="Tandenborstel", Count=1, Total=1, Done= true }
+                new Item { Id= Guid.NewGuid().ToString(), Name="Tandpasta", Count=0, Done= false },
+                new Item { Id= Guid.NewGuid().ToString(), Name="Tandenborstel", Count=1, Done= true }
             };
 
             foreach (Item item in ItemLijst2)

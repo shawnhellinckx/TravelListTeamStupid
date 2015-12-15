@@ -16,5 +16,8 @@ namespace TraveLLisTService.DataObjects
 
         public string Name { get; set; }
         public virtual ICollection<Item> Items { get; set; }
+
+        public string JourneyId { get; set; }
+        public virtual Journey journey {get; set;}
     }
 }
