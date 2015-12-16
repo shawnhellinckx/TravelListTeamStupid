@@ -57,10 +57,22 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
 
-                                <TextBlock Text="{Binding Name}" Grid.Row="0"/>
+                                <TextBlock Text="{Binding Name}" Grid.Row="0" Grid.Column="0" Width="150"/>
                                 <!--<TextBlock Text="{Binding PercentageDone, StringFormat='{}{0:p}'}" Grid.Row="1"/>-->
-                                <TextBlock Text="{Binding Date, StringFormat='MM/dd/yy'}" Grid.Row="2"/>
+                                <TextBlock Text="{Binding Date, StringFormat='MM/dd/yy'}" Grid.Row="2" Grid.Column="0"/>
+                                <Button Click="Button_Click" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Width="Auto" CommandParameter="{Binding Name}">
+                                    <Button.Content>
+                                        <TextBlock>
+                                            <Run Text="Go to "/>
+                                            <Run Text="{Binding Name}"/>
+                                        </TextBlock>
+                                    </Button.Content>
+                                </Button>
                             </Grid>
                         </Border>
                     </DataTemplate>

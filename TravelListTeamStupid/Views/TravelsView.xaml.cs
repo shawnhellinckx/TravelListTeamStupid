@@ -11,6 +11,7 @@ using TravelListTeamStupid.Resources;
 using TravelListTeamStupid.ViewModels;
 using TravelListTeamStupid.Model;
 using System.Collections.ObjectModel;
+using Microsoft.Phone.Tasks;
 
 namespace TravelListTeamStupid.Views
 {
@@ -24,7 +25,10 @@ namespace TravelListTeamStupid.Views
             list = longListTravel;
             //travelsViewModel.Get();
 
-            list.ItemsSource = travelsViewModel.GetTravels();
+            if (list != null)
+            {
+                list.ItemsSource = travelsViewModel.GetTravels();
+            }
         }
 
         private void appButton_Click(object sender, EventArgs e)
@@ -37,6 +41,22 @@ namespace TravelListTeamStupid.Views
         {
             NavigationService.Navigate(new Uri("/Views/CategoriesView.xaml", UriKind.Relative));
             longListTravel.SelectedItem = null;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            string location = (string)button.CommandParameter;
+
+            // instantie
+            BingMapsDirectionsTask bingTask = new BingMapsDirectionsTask();
+
+            // properties
+            LabeledMapLocation lml = new LabeledMapLocation(location, null);
+            bingTask.End = lml;
+
+            //show
+            bingTask.Show();
         }
     }
 }
