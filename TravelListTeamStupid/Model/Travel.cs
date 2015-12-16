@@ -23,7 +23,7 @@ namespace TravelListTeamStupid.Model
         }
 
         [JsonProperty(PropertyName = "journeyId")]
-        public string id { get; set; }
+        public string Id { get; set; }
 
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
