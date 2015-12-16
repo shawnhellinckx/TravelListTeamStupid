@@ -29,12 +29,14 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,72,-10,0" TextWrapping="Wrap" Text="Waar ga je naartoe?" VerticalAlignment="Top" Width="456" Height="44"/>
-            <toolkit:PhoneTextBox x:Name="txtName" HorizontalAlignment="Left" Height="72" Margin="0,121,0,0" TextWrapping="Wrap" Hint="Geef een bestemming" VerticalAlignment="Top" Width="456"/>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,72,-10,0" TextWrapping="Wrap" Text="Waar ga je naartoe?" VerticalAlignment="Top" Width="456" Height="44" FontSize="26.667"/>
             <toolkit:DatePicker x:Name="datePicker" Margin="0,251,0,275" ValueChanged="datePickerValueChanged" />
+            <toolkit:AutoCompleteBox 
+               x:Name="AutoCompleteTravel"
+               MinimumPrefixLength="1"
+               FilterMode="Contains"
+               VerticalAlignment="Top" Margin="0,121,0,0"/>
             <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnSave_Click" Margin="0,453,0,0" Width="446" Height="130"/>
         </Grid>
-        
     </Grid>
-
 </phone:PhoneApplicationPage>
