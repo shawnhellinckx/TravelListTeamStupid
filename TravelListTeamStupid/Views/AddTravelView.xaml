@@ -23,15 +23,15 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="Add Travel" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="TraveLLisT" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="Add Travel" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,72,-10,0" TextWrapping="Wrap" Text="Waar ga je naartoe?" VerticalAlignment="Top" Width="456" Height="44"/>
             <toolkit:PhoneTextBox x:Name="txtName" HorizontalAlignment="Left" Height="72" Margin="0,121,0,0" TextWrapping="Wrap" Hint="Geef een bestemming" VerticalAlignment="Top" Width="456"/>
-            <toolkit:DatePicker Margin="0,251,0,275" />
+            <toolkit:DatePicker x:Name="datePicker" Margin="0,251,0,275" ValueChanged="datePickerValueChanged" />
             <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnSave_Click" Margin="0,453,0,0" Width="446" Height="130"/>
         </Grid>
         

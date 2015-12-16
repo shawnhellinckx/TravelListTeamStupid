@@ -14,6 +14,7 @@ namespace TravelListTeamStupid.ViewModels
     public partial class AddTravelView : PhoneApplicationPage
     {
         TravelsViewModel travelsViewModel;
+        DateTime date;
 
         public AddTravelView()
         {
@@ -24,7 +25,6 @@ namespace TravelListTeamStupid.ViewModels
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             string name = txtName.Text;
-            DateTime date = new DateTime(2008, 3, 15);
             Travel travel = new Travel(name, date);
             Console.WriteLine(travel.Name);
 
@@ -36,6 +36,11 @@ namespace TravelListTeamStupid.ViewModels
             //}
 
             NavigationService.GoBack();
+        }
+
+        private void datePickerValueChanged(object sender, DateTimeValueChangedEventArgs e)
+        {
+            date = (DateTime)e.NewDateTime;
         }
     }
 }

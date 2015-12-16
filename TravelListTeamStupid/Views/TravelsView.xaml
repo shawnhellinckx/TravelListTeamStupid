@@ -40,8 +40,8 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="TraveLLisT" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="Journeys" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -59,8 +59,8 @@
                                 </Grid.RowDefinitions>
 
                                 <TextBlock Text="{Binding Name}" Grid.Row="0"/>
-                                <TextBlock Text="{Binding PercentageDone}" Grid.Row="1"/>
-                                <TextBlock Text="{Binding Date}" Grid.Row="2"/>
+                                <TextBlock Text="{Binding PercentageDone, StringFormat='{}{0:p}'}" Grid.Row="1"/>
+                                <TextBlock Text="{Binding Date, StringFormat='MM/dd/yy'}" Grid.Row="2"/>
                             </Grid>
                         </Border>
                     </DataTemplate>
