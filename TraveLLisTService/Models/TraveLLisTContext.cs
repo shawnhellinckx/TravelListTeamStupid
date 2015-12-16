@@ -41,6 +41,16 @@ namespace TraveLLisTService.Models
             modelBuilder.Conventions.Add(
                 new AttributeToColumnAnnotationConvention<TableColumnAttribute, string>(
                     "ServiceTableColumn", (property, attributes) => attributes.Single().ColumnType.ToString()));
+
+            modelBuilder.Entity<Journey>()
+                .HasMany(j => j.Categories)
+                .WithRequired(j => j.journey)
+                .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<Category>()
+                .HasMany(j => j.Items)
+                .WithRequired(j => j.category)
+                .WillCascadeOnDelete(true);
         }
     }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -10,10 +11,17 @@ namespace TravelListTeamStupid.Model
 {
     public class Category : INotifyPropertyChanged
     {
+        [JsonProperty(PropertyName = "items")]
         public ObservableCollection<Item> items;
 
         public int Id { get; set; }
+
+        [JsonProperty(PropertyName = "name")]
         public String Name { get; set; }
+
+        [JsonProperty(PropertyName = "journeyid")]
+        public string JourneyId { get; set; }
+
 
         public double Percent => GetPercentCompleted();
 
