@@ -25,7 +25,7 @@ namespace TravelListTeamStupid.ViewModels
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            string name = txtName.Text;
+            string name = AutoCompleteTravel.Text;
             Travel travel = new Travel(name, date);
             Console.WriteLine(travel.Name);
 
