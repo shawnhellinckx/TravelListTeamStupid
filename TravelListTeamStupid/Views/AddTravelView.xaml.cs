@@ -13,8 +13,9 @@ namespace TravelListTeamStupid.ViewModels
 {
     public partial class AddTravelView : PhoneApplicationPage
     {
-        TravelsViewModel travelsViewModel;
-        DateTime date;
+        private TravelsViewModel travelsViewModel;
+        private DateTime date;
+        private List<string> states = new List<string>();
 
         public AddTravelView()
         {
@@ -30,17 +31,37 @@ namespace TravelListTeamStupid.ViewModels
 
             travelsViewModel.AddTravel(travel);
 
-            //foreach(Travel t in TravelsViewModel.GetTravelList())
-            //{
-            //    Console.WriteLine();
-            //}
-
             NavigationService.GoBack();
         }
 
         private void datePickerValueChanged(object sender, DateTimeValueChangedEventArgs e)
         {
             date = (DateTime)e.NewDateTime;
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            ReadFile();
+
+            AutoCompleteTravel.ItemsSource = states;
+        }
+
+        private void ReadFile()
+        {
+            int counter = 0;
+            string line;
+
+            // Read the file and display it line by line.
+            System.IO.StreamReader file =
+                new System.IO.StreamReader("Assets/cities.txt");
+            while ((line = file.ReadLine()) != null)
+            {
+                states.Add(line);
+                counter++;
+            }
+
+            file.Close();
         }
     }
 }

@@ -45,9 +45,7 @@
                                     <TextBlock x:Name="txtCategory" Text="{Binding Name}" HorizontalAlignment="Center" Grid.Column="0" Padding="0,10"/>
                                     <TextBlock Text="{Binding Percent}" Grid.Column="1"/>
                                     <TextBlock Text="%" Grid.Column="2"/>
-
                                 </Grid>
-
                             </Border>
                         </StackPanel>
                     </DataTemplate>

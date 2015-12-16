@@ -20,7 +20,7 @@
         <DataTemplate x:Key="TravelsItemTemplate">
             <StackPanel Background="{StaticResource PhoneAccentBrush}">
                 <TextBlock x:Name="Place" Text="{Binding Name, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                <TextBlock x:Name="Percentage" Text="{Binding PercentageDone, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                <!--<TextBlock x:Name="Percentage" Text="{Binding PercentageDone, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" />-->
                 <TextBlock x:Name="Date" Text="{Binding Date, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" />
             </StackPanel>
         </DataTemplate>
@@ -59,19 +59,13 @@
                                 </Grid.RowDefinitions>
 
                                 <TextBlock Text="{Binding Name}" Grid.Row="0"/>
-                                <TextBlock Text="{Binding PercentageDone, StringFormat='{}{0:p}'}" Grid.Row="1"/>
+                                <!--<TextBlock Text="{Binding PercentageDone, StringFormat='{}{0:p}'}" Grid.Row="1"/>-->
                                 <TextBlock Text="{Binding Date, StringFormat='MM/dd/yy'}" Grid.Row="2"/>
                             </Grid>
                         </Border>
                     </DataTemplate>
                 </phone:LongListSelector.ItemTemplate>
             </phone:LongListSelector>
-
-
-
-
         </Grid>
-
     </Grid>
-
 </phone:PhoneApplicationPage>
